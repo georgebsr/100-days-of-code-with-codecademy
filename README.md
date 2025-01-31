@@ -1,27 +1,15 @@
+# About
 
-# Sleep Debt Calculator
+This repository is dedicated to documenting my journey through 100 days of learning and coding with codecademy.com. I will be uploading the projects I build on codecademy here.
 
-This is a project I built for Day 15 of the 100 Days of Coding challenge on Codecademy.
+## Motivation
 
-## Description
+I started this challenge to improve my backend development skills and become more confident in building real-world projects. This repository will showcase my progress along the way.
 
-A simple Sleep Debt Calculator that helps track how much sleep you’ve gotten compared to your ideal sleep hours. The app calculates the difference and gives feedback based on your sleep habits.
 
-## Features
+# Sleep Debt Calculator (Day 15)
 
-- Calculate total sleep hours for the week.
-- Compare actual sleep hours to the ideal sleep hours (8 hours per day).
-- Gives feedback on whether you’ve slept enough, too much, or need more rest.
+This project calculates your sleep debt by comparing the hours you've slept each night with your ideal sleep goal. It gives feedback on whether you're getting enough sleep and tracks your progress over time.
+![SleepDebtCalculator.js]([https://img.shields.io/badge/Codecademy-100DaysOfCode-blue](https://github.com/georgebsr/100-days-of-code/blob/main/SleepDebtCalculator.js)
 
-## How to Run
 
-1. Clone the repository:
-```bash
-  git clone https://github.com/georgebsr/Sleep-Debt-Calculator.git
-```
-2. Open the project in your preferred text editor or IDE.
-3. Run the JavaScript code to calculate your sleep debt!
-
-## License
-
-This project is part of the 100 Days of Coding challenge and is open to everyone. Feel free to fork, clone, and learn from it!
