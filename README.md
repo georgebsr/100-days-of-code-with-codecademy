@@ -36,4 +36,5 @@ Today, I worked on the Training Days project, which focuses on improving variabl
 - Global vs. Local Scope: Moved variables to the appropriate scope to avoid unexpected behavior.
 - Function Parameters: Made functions more reusable by passing variables as arguments instead of relying on global scope.
 - Code Optimization: Reduced redundant variable declarations and improved maintainability.
+  
 [TrainingDays.js](https://github.com/georgebsr/100-days-of-code/blob/main/Training%20Days/TrainingDays.js)
