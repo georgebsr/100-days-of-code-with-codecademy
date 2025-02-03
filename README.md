@@ -21,4 +21,8 @@ Learned about:
 - Function scope
 - Code block scope
 
+# Day 17
+## Leetcode
+
+I had very little free time today so all I did was to solve some easy Leetcode challenges.
 
