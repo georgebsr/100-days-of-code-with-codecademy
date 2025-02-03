@@ -26,3 +26,14 @@ Learned about:
 
 I had very little free time today so all I did was to solve some easy Leetcode challenges.
 
+# Day 18 
+## JavaScript Syntax: Training Days
+
+Today, I worked on the Training Days project, which focuses on improving variable scope in JavaScript. The project simulates a training schedule for athletes by assigning them a random event and determining how many days they need to train.
+
+## Concepts Learned:
+
+-Global vs. Local Scope: Moved variables to the appropriate scope to avoid unexpected behavior.
+-Function Parameters: Made functions more reusable by passing variables as arguments instead of relying on global scope.
+-Code Optimization: Reduced redundant variable declarations and improved maintainability.
+[TrainingDays.js](https://github.com/georgebsr/100-days-of-code/blob/main/Training%20Days/TrainingDays.js)
