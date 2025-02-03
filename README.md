@@ -38,3 +38,7 @@ Today, I worked on the Training Days project, which focuses on improving variabl
 - Code Optimization: Reduced redundant variable declarations and improved maintainability.
   
 [TrainingDays.js](https://github.com/georgebsr/100-days-of-code/blob/main/Training%20Days/TrainingDays.js)
+
+## Code Challenges: JavaScript Fundamentals
+
+I also practiced on JavaScript Syntax: Variables, Data Types, Conditionals, Functions
