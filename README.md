@@ -42,3 +42,8 @@ Today, I worked on the Training Days project, which focuses on improving variabl
 ## Code Challenges: JavaScript Fundamentals
 
 I also practiced on JavaScript Syntax: Variables, Data Types, Conditionals, Functions
+
+# Day 19
+## Code Challenges: JavaScript Fundamentals
+
+I continued practicing on JavaScript challenges
