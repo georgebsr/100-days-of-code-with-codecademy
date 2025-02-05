@@ -54,4 +54,5 @@ I continued practicing on JavaScript challenges on Codecademy
 I continued practicing on JavaScript challenges on Codecademy
 
 My progress so far:
+
 ![progress]([https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/05_02_2025.png])
