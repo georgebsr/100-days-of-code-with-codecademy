@@ -49,8 +49,9 @@ I also practiced on JavaScript Syntax: Variables, Data Types, Conditionals, Func
 I continued practicing on JavaScript challenges on Codecademy
 
 # Day 20
-# Day 19
 ## Code Challenges: JavaScript Fundamentals
 
 I continued practicing on JavaScript challenges on Codecademy
 
+My progress so far:
+![progress]([https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/05_02_2025.png])
