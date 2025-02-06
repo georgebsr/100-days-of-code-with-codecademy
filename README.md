@@ -69,9 +69,9 @@ Practiced JavaScript conditionals and functions with these 3 code challenges:
 
 1) Create a function colorMessage() that takes 2 string arguments, favoriteColor and shirtColor.
 
-If the value of favoriteColor is the same as the value of shirtColor return the string 'The shirt is your favorite color!'.
+  If the value of favoriteColor is the same as the value of shirtColor return the string 'The shirt is your favorite color!'.
 
-If not, return the string 'That is a nice color.'
+  If not, return the string 'That is a nice color.'
 
 
 ```
@@ -98,25 +98,25 @@ const isEven = (number) => {
 
 3) Create a function numberDigits() that takes the variable x as its only parameter.
 
-If the variable x is between 0 and 9, return the string 'One digit: N', where N is the value of x. For example, numberDigits(5) would return:
+   If the variable x is between 0 and 9, return the string 'One digit: N', where N is the value of x. For example, numberDigits(5) would return:
 
 ```
 'One digit: 5'
 ```
-
-If the variable x is between 10 and 99, return the string 'Two digits: N', where N is the value of x. For example, numberDigits(12) would output:
+  
+  If the variable x is between 10 and 99, return the string 'Two digits: N', where N is the value of x. For example, numberDigits(12) would output:
 
 ```
 'Two digits: 12'
 ```
 
-Any other value of x, including negative numbers, return the string 'The number is: N', where N is the value of x. For example, numberDigits(-202) would output:
+  Any other value of x, including negative numbers, return the string 'The number is: N', where N is the value of x. For example, numberDigits(-202) would output:
 
 ```
 'The number is: -202'
 ```
 
-- Using if
+- Using if:
 ```
 function numberDigits(x) {
     if (x >= 0 && x <= 9) {
@@ -132,7 +132,8 @@ console.log(numberDigits(5));    //Test
 console.log(numberDigits(12));   //Test
 console.log(numberDigits(-202)); //Test
 ```
-- Using switch
+
+- Using switch:
 
 ```
 function numberDigits(x) {
@@ -147,3 +148,5 @@ function numberDigits(x) {
 }
 
 ```
+
+Also I brushed up on my knowledge of Running JavaScript in the Browser Console and JavaScript Runtime Environments.
