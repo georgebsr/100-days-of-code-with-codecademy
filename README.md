@@ -61,3 +61,89 @@ I continued practicing on JavaScript challenges on Codecademy
 My progress so far:
 
 ![progress](https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/05_02_2025.png)
+
+# Day 21
+## JavaScript Practice: Data Types, Conditional, Functions
+
+Practiced JavaScript conditionals and functions with these 3 code challenges:
+
+1) Create a function colorMessage() that takes 2 string arguments, favoriteColor and shirtColor.
+
+If the value of favoriteColor is the same as the value of shirtColor return the string 'The shirt is your favorite color!'.
+
+If not, return the string 'That is a nice color.'
+
+
+```
+const colorMessage = (favoriteColor, shirtColor) => {
+  if (favoriteColor === shirtColor) {
+    return 'The shirt is your favorite color!';
+  } else {
+    return 'That is a nice color.';
+  }
+}
+```
+
+2) Create a function isEven() that takes a number as its only parameter. The function should return true if the number is even and false if the number is odd.
+
+```
+const isEven = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+
+3) Create a function numberDigits() that takes the variable x as its only parameter.
+
+If the variable x is between 0 and 9, return the string 'One digit: N', where N is the value of x. For example, numberDigits(5) would return:
+
+```
+'One digit: 5'
+```
+
+If the variable x is between 10 and 99, return the string 'Two digits: N', where N is the value of x. For example, numberDigits(12) would output:
+
+```
+'Two digits: 12'
+```
+
+Any other value of x, including negative numbers, return the string 'The number is: N', where N is the value of x. For example, numberDigits(-202) would output:
+
+```
+'The number is: -202'
+```
+
+- Using if
+```
+function numberDigits(x) {
+    if (x >= 0 && x <= 9) {
+        return `One digit: ${x}`;
+    } else if (x >= 10 && x <= 99) {
+        return `Two digits: ${x}`;
+    } else {
+        return `The number is: ${x}`;
+    }
+}
+
+console.log(numberDigits(5));    //Test
+console.log(numberDigits(12));   //Test
+console.log(numberDigits(-202)); //Test
+```
+- Using switch
+
+```
+function numberDigits(x) {
+    switch (true) {
+        case (x >= 0 && x <= 9):
+            return `One digit: ${x}`;
+        case (x >= 10 && x <= 99):
+            return `Two digits: ${x}`;
+        default:
+            return `The number is: ${x}`;
+    }
+}
+
+```
