@@ -6,6 +6,11 @@ This repository is dedicated to documenting my journey through 100 days of learn
 
 I started this challenge to improve my backend development skills and become more confident in building real-world projects. This repository will showcase my progress along the way.
 
+# Day 1-15
+## Back-End Engineer carrer path
+
+Started the Back-End Engineer carrer path on codecademy.com
+
 # Day 15
 ## Sleep Debt Calculator
 
