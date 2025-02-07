@@ -150,3 +150,24 @@ function numberDigits(x) {
 ```
 
 Also I brushed up on my knowledge of Running JavaScript in the Browser Console and JavaScript Runtime Environments.
+
+# Day 22
+## Number Guesser
+
+Today, I completed the Number Guesser project from Codecademy's JavaScript Syntax, Part I. This project focused on writing JavaScript functions to power a small guessing game that runs in the browser.
+
+### Learned concepts:
+- Generating random numbers with Math.random()
+- Using Math.abs() to calculate absolute differences
+- Implementing game logic using conditional statements
+- Keeping track of scores and rounds
+
+### Features implemented:
+✅ generateTarget() – Generates a random number between 0 and 9.
+✅ compareGuesses() – Determines the winner by comparing guesses to the target number. The human player wins in case of a tie.
+✅ updateScore() – Updates the score based on the round’s winner.
+✅ advanceRound() – Increments the round counter.
+✅ getAbsoluteDistance() – Refactored distance calculation into a separate function.
+✅ Input validation – Prevents users from entering numbers outside the 0-9 range.
+
+
