@@ -11,6 +11,7 @@ Started the Back-End Engineer carrer path on codecademy.com
 # Day 15
 ## Sleep Debt Calculator
 This project calculates your sleep debt by comparing the hours you've slept each night with your ideal sleep goal. It gives feedback on whether you're getting enough sleep and tracks your progress over time.
+
 [SleepDebtCalculator.js](https://github.com/georgebsr/100-days-of-code/blob/main/Sleep%20Debt%20Calculator/SleepDebtCalculator.js)
 
 # Day 16
@@ -154,6 +155,19 @@ Today, I completed the Number Guesser project from Codecademy's JavaScript Synta
 - getAbsoluteDistance() – Refactored distance calculation into a separate function.
 - Input validation – Prevents users from entering numbers outside the 0-9 range.
 
+[Number Guesser](https://github.com/georgebsr/100-days-of-code/tree/main/number-guesser)
+
 # Day 23 & Day 24
 ## Break
 No coding this days as I was in the village without access to a PC. Taking a short break!
+
+# Day 25
+## Secret Message
+Today, I worked on a JavaScript challenge that involved manipulating arrays using various array methods. The goal was to transform an array of words into a secret message by performing different operations like removing, adding, and replacing elements.
+
+### Learned concepts:
+- Array methods such as .pop(), .push(), .shift(), .unshift(), and .splice() for modifying arrays.
+- Using indexing to directly change values within an array.
+- Using .join(' ') to convert an array into a readable string
+
+[SecretMessage.js](https://github.com/georgebsr/100-days-of-code/blob/main/Secret%20Message/secretmessage.js)
