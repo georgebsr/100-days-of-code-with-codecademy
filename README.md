@@ -1,25 +1,20 @@
 # About
-
-This repository is dedicated to documenting my journey through 100 days of learning and coding with codecademy.com. I will be uploading the projects I build on codecademy here.
+This repository is dedicated to documenting my journey through 100 days of learning and coding with codecademy.com. I will be uploading the projects I build on codecademy or in general here.
 
 # Motivation
-
 I started this challenge to improve my backend development skills and become more confident in building real-world projects. This repository will showcase my progress along the way.
 
 # Day 1-15
 ## Back-End Engineer carrer path
-
 Started the Back-End Engineer carrer path on codecademy.com
 
 # Day 15
 ## Sleep Debt Calculator
-
 This project calculates your sleep debt by comparing the hours you've slept each night with your ideal sleep goal. It gives feedback on whether you're getting enough sleep and tracks your progress over time.
 [SleepDebtCalculator.js](https://github.com/georgebsr/100-days-of-code/blob/main/Sleep%20Debt%20Calculator/SleepDebtCalculator.js)
 
 # Day 16
 ## JavaScript Syntax: Scope
-
 Learned about:
 - Global scope
 - Module scope
@@ -28,34 +23,25 @@ Learned about:
 
 # Day 17
 ## Leetcode
-
 I had very little free time today so all I did was to solve some easy Leetcode challenges.
 
 # Day 18 
 ## JavaScript Syntax: Training Days
-
 Today, I worked on the Training Days project, which focuses on improving variable scope in JavaScript. The project simulates a training schedule for athletes by assigning them a random event and determining how many days they need to train.
 
 ## Concepts Learned:
-
 - Global vs. Local Scope: Moved variables to the appropriate scope to avoid unexpected behavior.
 - Function Parameters: Made functions more reusable by passing variables as arguments instead of relying on global scope.
 - Code Optimization: Reduced redundant variable declarations and improved maintainability.
   
 [TrainingDays.js](https://github.com/georgebsr/100-days-of-code/blob/main/Training%20Days/TrainingDays.js)
 
-## Code Challenges: JavaScript Fundamentals
-
-I also practiced on JavaScript Syntax: Variables, Data Types, Conditionals, Functions
-
 # Day 19
 ## Code Challenges: JavaScript Fundamentals
-
-I continued practicing on JavaScript challenges on Codecademy
+I practiced on JavaScript Syntax: Variables, Data Types, Conditionals, Functions
 
 # Day 20
 ## Code Challenges: JavaScript Fundamentals
-
 I continued practicing on JavaScript challenges on Codecademy
 
 My progress so far:
@@ -64,7 +50,6 @@ My progress so far:
 
 # Day 21
 ## JavaScript Practice: Data Types, Conditional, Functions
-
 Practiced JavaScript conditionals and functions with these 3 code challenges:
 
 1) Create a function colorMessage() that takes 2 string arguments, favoriteColor and shirtColor.
@@ -153,7 +138,6 @@ Also I brushed up on my knowledge of Running JavaScript in the Browser Console a
 
 # Day 22
 ## Number Guesser
-
 Today, I completed the Number Guesser project from Codecademy's JavaScript Syntax, Part I. This project focused on writing JavaScript functions to power a small guessing game that runs in the browser.
 
 ### Learned concepts:
@@ -170,4 +154,6 @@ Today, I completed the Number Guesser project from Codecademy's JavaScript Synta
 - getAbsoluteDistance() – Refactored distance calculation into a separate function.
 - Input validation – Prevents users from entering numbers outside the 0-9 range.
 
-
+# Day 23 & Day 24
+## Break
+No coding this days as I was in the village without access to a PC. Taking a short break!
