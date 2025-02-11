@@ -171,3 +171,21 @@ Today, I worked on a JavaScript challenge that involved manipulating arrays usin
 - Using .join(' ') to convert an array into a readable string
 
 [SecretMessage.js](https://github.com/georgebsr/100-days-of-code/blob/main/Secret%20Message/secretmessage.js)
+
+# Day 26
+## Loops & Whale Talk
+Today, I revisited loops in JavaScript and worked on a fun mini-project that translates a phrase into whale language! 
+Loops are incredibly useful for string manipulation! This challenge was a great refresher on iteration and conditional logic. 
+The rules for whale talk:
+- Only vowels (a, e, i, o, u) are used.
+- "e" and "u" are doubled.
+- The final output is in uppercase to match the whale's singing style.
+
+### Used/Learned concepts:
+- For loops to iterate through strings.
+- Nested loops for comparing characters against an array.
+- .push() method to add elements to an array dynamically.
+- .join() method to convert an array into a string.
+- .toUpperCase() to modify string case.
+
+[WhaleTalk.js](https://github.com/georgebsr/100-days-of-code/blob/main/Whale%20Talk/whaletalk.js)
