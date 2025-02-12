@@ -189,3 +189,7 @@ The rules for whale talk:
 - .toUpperCase() to modify string case.
 
 [WhaleTalk.js](https://github.com/georgebsr/100-days-of-code/blob/main/Whale%20Talk/whaletalk.js)
+
+# Day 27
+## JavaScript Objects
+Today, I didn’t write any actual code, but I still made progress by revisiting JavaScript Objects on Codecademy. Since work kept me busy, I focused on learning exercises related to objects instead of a full project.
