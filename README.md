@@ -193,3 +193,7 @@ The rules for whale talk:
 # Day 27
 ## JavaScript Objects
 Today, I didn’t write any actual code, but I still made progress by revisiting JavaScript Objects on Codecademy. Since work kept me busy, I focused on learning exercises related to objects instead of a full project.
+
+# Day 28
+## Advanced Objects
+Today, I deepened my understanding of JavaScript Objects, focusing on Advanced Objects. I explored more complex concepts that make objects even more powerful in JavaScript.
