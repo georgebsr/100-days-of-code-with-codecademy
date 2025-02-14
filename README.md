@@ -197,3 +197,17 @@ Today, I didn’t write any actual code, but I still made progress by revisiting
 # Day 28
 ## Advanced Objects
 Today, I deepened my understanding of JavaScript Objects, focusing on Advanced Objects. I explored more complex concepts that make objects even more powerful in JavaScript.
+
+# Day 29
+## Getters, Setters & Factory functions
+Today, I learned about getters and setters in JavaScript, and how they help control how object properties are accessed and modified. I also explored factory functions and applied my knowledge in a small project.
+
+## Meal Maker
+I built a Meal Maker program for a restaurant, which allows setting a daily special meal and its price while ensuring data integrity using getters and setters.
+
+## Key Concepts Applied:
+- Encapsulation using private properties (_meal, _price)
+- Setters to validate input types before assigning values
+- Getters to format and return readable output
+- Logical validation to ensure both meal and price exist
+
