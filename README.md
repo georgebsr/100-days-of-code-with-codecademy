@@ -211,3 +211,6 @@ I built a Meal Maker program for a restaurant, which allows setting a daily spec
 - Getters to format and return readable output
 - Logical validation to ensure both meal and price exist
 
+# Day 29 & Day 30
+## Break
+No coding this days as I was in the village without access to a PC. Taking a short break!
