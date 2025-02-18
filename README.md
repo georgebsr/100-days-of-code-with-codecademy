@@ -122,6 +122,8 @@ Today, I learned about getters and setters in JavaScript, and how they help cont
 ## Meal Maker
 I built a Meal Maker program for a restaurant, which allows setting a daily special meal and its price while ensuring data integrity using getters and setters.
 
+[MealMaker.js](https://github.com/georgebsr/100-days-of-code/blob/main/Meal%20Maker/mealmaker.js)
+
 ## Key Concepts Applied:
 - Encapsulation using private properties (_meal, _price)
 - Setters to validate input types before assigning values
@@ -139,3 +141,14 @@ Today, I took a break from the curriculum and focused on practicing JavaScript c
 My progress so far:
 
 ![progress](https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/17_02_2025.png)
+
+# Day 32
+## Team Stats
+Today, I worked on a project called Team Stats. I created a JavaScript object that holds information about a sports team, including players and game data. I also implemented methods for adding new players and game results to the data.
+
+- Created a team object with properties for players and games
+- Implemented getter methods to retrieve player and game data
+- Added methods to add new players and record new games
+- Validated the methods by adding new player Bugs Bunny and a game against the Titans
+
+[TeamStats.js](https://github.com/georgebsr/100-days-of-code/blob/main/Team%20Stats/teamstats.js)
