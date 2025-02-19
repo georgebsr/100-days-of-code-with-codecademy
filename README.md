@@ -152,3 +152,8 @@ Today, I worked on a project called Team Stats. I created a JavaScript object th
 - Validated the methods by adding new player Bugs Bunny and a game against the Titans
 
 [TeamStats.js](https://github.com/georgebsr/100-days-of-code/blob/main/Team%20Stats/teamstats.js)
+
+# Day 33
+## Leetcode
+I had no free time today because of interviews and some personal stuff. 
+I solved some Leetcode challenges in JS so as not to break the streak.
