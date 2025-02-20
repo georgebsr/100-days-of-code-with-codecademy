@@ -157,3 +157,13 @@ Today, I worked on a project called Team Stats. I created a JavaScript object th
 ## Leetcode
 I had no free time today because of interviews and some personal stuff. 
 I solved some Leetcode challenges in JS so as not to break the streak.
+
+# Day 34
+## Iterators and Higher-Order Functions
+Today, I focused on JavaScript Iterators and Higher-Order Functions. I explored how functions like .forEach(), .map(), .filter(), and .reduce() can be used to iterate over arrays in a more concise and functional way.
+
+## Concepts Practiced:
+- forEach() – Executed a function on each element in an array
+- map() – Created a new array by applying a function to each element
+- filter() – Returned an array with elements that passed a specific condition
+- reduce() – Combined array elements into a single value (sum, product, etc.)
