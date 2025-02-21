@@ -6,7 +6,7 @@ I started this challenge to improve my backend development skills and become mor
 
 # Day 1-15
 ## Back-End Engineer carrer path
-Started the Back-End Engineer carrer path on codecademy.com
+Started the Back-End Engineer career path on codecademy.com
 
 # Day 15
 ## Sleep Debt Calculator
@@ -76,7 +76,7 @@ Today, I completed the Number Guesser project from Codecademy's JavaScript Synta
 
 # Day 23 & Day 24
 ## Break
-No coding this days as I was in the village without access to a PC. Taking a short break!
+No coding these days as I was in the village without access to a PC. Taking a short break!
 
 # Day 25
 ## Secret Message
@@ -130,11 +130,11 @@ I built a Meal Maker program for a restaurant, which allows setting a daily spec
 - Getters to format and return readable output
 - Logical validation to ensure both meal and price exist
 
-# Day 29 & Day 30
+# Day 30 & Day 31
 ## Break
-No coding this days as I was in the village without access to a PC. Taking a short break!
+No coding these days as I was in the village without access to a PC. Taking a short break!
 
-# Day 31
+# Day 32
 ## Practicing JavaScript concepts
 Today, I took a break from the curriculum and focused on practicing JavaScript concepts through exercises on Codecademy.
 
@@ -142,7 +142,7 @@ My progress so far:
 
 ![progress](https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/17_02_2025.png)
 
-# Day 32
+# Day 33
 ## Team Stats
 Today, I worked on a project called Team Stats. I created a JavaScript object that holds information about a sports team, including players and game data. I also implemented methods for adding new players and game results to the data.
 
@@ -153,12 +153,12 @@ Today, I worked on a project called Team Stats. I created a JavaScript object th
 
 [TeamStats.js](https://github.com/georgebsr/100-days-of-code/blob/main/Team%20Stats/teamstats.js)
 
-# Day 33
+# Day 34
 ## Leetcode
 I had no free time today because of interviews and some personal stuff. 
 I solved some Leetcode challenges in JS so as not to break the streak.
 
-# Day 34
+# Day 35
 ## Iterators and Higher-Order Functions
 Today, I focused on JavaScript Iterators and Higher-Order Functions. I explored how functions like .forEach(), .map(), .filter(), and .reduce() can be used to iterate over arrays in a more concise and functional way.
 
@@ -168,5 +168,5 @@ Today, I focused on JavaScript Iterators and Higher-Order Functions. I explored 
 - filter() – Returned an array with elements that passed a specific condition
 - reduce() – Combined array elements into a single value (sum, product, etc.)
 
-# Day 35
+# Day 36
 Had no free time due to work & personal stuff but stayed consistent by studying MDN docs on iterators & practicing in VS Code—focused on .forEach(), .map(), .filter(), .reduce(), custom iterators, and debugging; key takeaway: reading helps, but coding makes it stick!
