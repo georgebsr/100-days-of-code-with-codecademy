@@ -5,7 +5,7 @@ This repository is dedicated to documenting my journey through 100 days of learn
 I started this challenge to improve my backend development skills and become more confident in building real-world projects. This repository will showcase my progress along the way.
 
 # Day 1-15
-## Back-End Engineer carrer path
+## Back-End Engineer career path
 Started the Back-End Engineer career path on codecademy.com
 
 # Day 15
@@ -24,7 +24,7 @@ Learned about:
 
 # Day 17
 ## Leetcode
-I had very little free time today so all I did was to solve some easy Leetcode challenges.
+I had very little free time today, so I solved some easy Leetcode challenges.
 
 # Day 18 
 ## JavaScript Syntax: Training Days
@@ -52,7 +52,7 @@ My progress so far:
 # Day 21
 ## JavaScript Practice: Data Types, Conditional, Functions
 Practiced JavaScript conditionals and functions with these code challenges:
-Also I brushed up on my knowledge of Running JavaScript in the Browser Console and JavaScript Runtime Environments.
+I also brushed up on running JavaScript in the browser console and JavaScript runtime environments.
 
 # Day 22
 ## Number Guesser
