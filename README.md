@@ -1,3 +1,15 @@
+# Table of Contents
+- [About](#about)  
+- [Motivation](#motivation)  
+- [Projects](#projects)  
+  - [Sleep Debt Calculator](#sleep-debt-calculator)  
+  - [Training Days](#training-days)  
+  - [Number Guesser](#number-guesser)  
+  - [Secret Message](#secret-message)  
+  - [Whale Talk](#whale-talk)  
+  - [Meal Maker](#meal-maker)  
+  - [Team Stats](#team-stats)  
+
 # About
 This repository is dedicated to documenting my journey through 100 days of learning and coding with codecademy.com. I will be uploading the projects I build on codecademy or in general here.
 
