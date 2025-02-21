@@ -3,10 +3,10 @@
 - [Motivation](#motivation)  
 - [Projects](#projects)  
   - [Sleep Debt Calculator](#sleep-debt-calculator)  
-  - [Training Days](#training-days)  
+  - [Training Days](#javascript-syntax-training-days)  
   - [Number Guesser](#number-guesser)  
   - [Secret Message](#secret-message)  
-  - [Whale Talk](#whale-talk)  
+  - [Whale Talk](#loops--whale-talk)  
   - [Meal Maker](#meal-maker)  
   - [Team Stats](#team-stats)  
 
