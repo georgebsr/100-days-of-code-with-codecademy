@@ -167,3 +167,6 @@ Today, I focused on JavaScript Iterators and Higher-Order Functions. I explored 
 - map() – Created a new array by applying a function to each element
 - filter() – Returned an array with elements that passed a specific condition
 - reduce() – Combined array elements into a single value (sum, product, etc.)
+
+# Day 35
+Had no free time due to work & personal stuff but stayed consistent by studying MDN docs on iterators & practicing in VS Code—focused on .forEach(), .map(), .filter(), .reduce(), custom iterators, and debugging; key takeaway: reading helps, but coding makes it stick!
