@@ -186,3 +186,6 @@ Had no free time due to work & personal stuff but stayed consistent by studying 
 # Day 37 & Day 38
 ## Break
 No coding these days as I was in the village without access to a PC. Taking a short break!
+
+# Day 39
+Today I worked on my thesis.
