@@ -182,3 +182,7 @@ Today, I focused on JavaScript Iterators and Higher-Order Functions. I explored 
 
 # Day 36
 Had no free time due to work & personal stuff but stayed consistent by studying MDN docs on iterators & practicing in VS Code—focused on .forEach(), .map(), .filter(), .reduce(), custom iterators, and debugging; key takeaway: reading helps, but coding makes it stick!
+
+# Day 37 & Day 38
+## Break
+No coding these days as I was in the village without access to a PC. Taking a short break!
