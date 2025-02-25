@@ -189,3 +189,10 @@ No coding these days as I was in the village without access to a PC. Taking a sh
 
 # Day 39
 Today I worked on my thesis.
+
+# Day 40
+## SQL Manipulation
+Took a break from JavaScript & revised SQL manipulation via Codecademy—created, updated, & deleted data in a friends table, added an email column, updated records, and practiced key SQL commands like CREATE TABLE, INSERT, UPDATE, ALTER, & DELETE. 
+Work & personal stuff still keeping me busy, but the streak continues!
+
+[Table.sql](https://github.com/georgebsr/100-days-of-code/blob/main/Create%20a%20Table/table.sql)
