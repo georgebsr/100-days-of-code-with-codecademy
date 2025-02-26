@@ -196,3 +196,7 @@ Took a break from JavaScript & revised SQL manipulation via Codecademy—created
 Work & personal stuff still keeping me busy, but the streak continues!
 
 [Table.sql](https://github.com/georgebsr/100-days-of-code/blob/main/Create%20a%20Table/table.sql)
+
+# Day 41
+## SQL Queries
+Continued SQL revision—focused on querying & filtering data effectively; covered SELECT, AS, DISTINCT, WHERE, LIKE, BETWEEN, AND, OR, ORDER BY, LIMIT, & CASE
