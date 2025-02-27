@@ -205,3 +205,6 @@ Continued SQL revision—focused on querying & filtering data effectively; cover
 ## Queries Challenges
 Completed some SQL challenges on the codecademy platform.
 Pausing tomorrow in solidarity with the protest over the Tempi accident.
+
+# Day 43
+Pausing today because I will be in the protest over the Tempi accident.
