@@ -200,3 +200,8 @@ Work & personal stuff still keeping me busy, but the streak continues!
 # Day 41
 ## SQL Queries
 Continued SQL revision—focused on querying & filtering data effectively; covered SELECT, AS, DISTINCT, WHERE, LIKE, BETWEEN, AND, OR, ORDER BY, LIMIT, & CASE
+
+# Day 42
+## Queries Challenges
+Completed some SQL challenges on the codecademy platform.
+Pausing tomorrow in solidarity with the protest over the Tempi accident.
