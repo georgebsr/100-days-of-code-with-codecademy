@@ -195,7 +195,7 @@ Today I worked on my thesis.
 Took a break from JavaScript & revised SQL manipulation via Codecademy—created, updated, & deleted data in a friends table, added an email column, updated records, and practiced key SQL commands like CREATE TABLE, INSERT, UPDATE, ALTER, & DELETE. 
 Work & personal stuff still keeping me busy, but the streak continues!
 
-[Table.sql](https://github.com/georgebsr/100-days-of-code/blob/main/Create%20a%20Table/table.sql)
+[Table.sql](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Create%20a%20Table/table.sql)
 
 # Day 41
 ## SQL Queries
@@ -208,3 +208,7 @@ Pausing tomorrow in solidarity with the protest over the Tempi accident.
 
 # Day 43
 Pausing today because I will be in the protest over the Tempi accident.
+
+# Day 44, Day 45 & Day 46
+No coding these days as I was in the village without access to a PC. I took a break for the Clean Monday long weekend, which marks the start of Lent in Greece.
+
