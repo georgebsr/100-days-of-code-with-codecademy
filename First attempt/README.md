@@ -8,7 +8,8 @@
   - [Secret Message](#secret-message)  
   - [Whale Talk](#loops--whale-talk)  
   - [Meal Maker](#meal-maker)  
-  - [Team Stats](#team-stats)  
+  - [Team Stats](#team-stats)
+  - [Create a Table](#sql-manipulation)
 
 # About
 This repository is dedicated to documenting my journey through 100 days of learning and coding with codecademy.com. I will be uploading the projects I build on codecademy or in general here.
@@ -24,7 +25,7 @@ Started the Back-End Engineer career path on codecademy.com
 ## Sleep Debt Calculator
 This project calculates your sleep debt by comparing the hours you've slept each night with your ideal sleep goal. It gives feedback on whether you're getting enough sleep and tracks your progress over time.
 
-[SleepDebtCalculator.js](https://github.com/georgebsr/100-days-of-code/blob/main/Sleep%20Debt%20Calculator/SleepDebtCalculator.js)
+[SleepDebtCalculator.js](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Sleep%20Debt%20Calculator/sleepdebtcalculator.js)
 
 # Day 16
 ## JavaScript Syntax: Scope
@@ -47,7 +48,7 @@ Today, I worked on the Training Days project, which focuses on improving variabl
 - Function Parameters: Made functions more reusable by passing variables as arguments instead of relying on global scope.
 - Code Optimization: Reduced redundant variable declarations and improved maintainability.
   
-[TrainingDays.js](https://github.com/georgebsr/100-days-of-code/blob/main/Training%20Days/TrainingDays.js)
+[TrainingDays.js](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Training%20Days/trainingdays.js)
 
 # Day 19
 ## Code Challenges: JavaScript Fundamentals
@@ -59,7 +60,7 @@ I continued practicing on JavaScript challenges on Codecademy
 
 My progress so far:
 
-![progress](https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/05_02_2025.png)
+![progress](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/My%20progress/05_02_2025.png)
 
 # Day 21
 ## JavaScript Practice: Data Types, Conditional, Functions
@@ -84,7 +85,7 @@ Today, I completed the Number Guesser project from Codecademy's JavaScript Synta
 - getAbsoluteDistance() – Refactored distance calculation into a separate function.
 - Input validation – Prevents users from entering numbers outside the 0-9 range.
 
-[Number Guesser](https://github.com/georgebsr/100-days-of-code/tree/main/number-guesser)
+[Number Guesser](https://github.com/georgebsr/100-days-of-code/tree/main/First%20attempt/Number%20Guesser)
 
 # Day 23 & Day 24
 ## Break
@@ -99,7 +100,7 @@ Today, I worked on a JavaScript challenge that involved manipulating arrays usin
 - Using indexing to directly change values within an array.
 - Using .join(' ') to convert an array into a readable string
 
-[SecretMessage.js](https://github.com/georgebsr/100-days-of-code/blob/main/Secret%20Message/secretmessage.js)
+[SecretMessage.js](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Secret%20Message/secretmessage.js)
 
 # Day 26
 ## Loops & Whale Talk
@@ -117,7 +118,7 @@ The rules for whale talk:
 - .join() method to convert an array into a string.
 - .toUpperCase() to modify string case.
 
-[WhaleTalk.js](https://github.com/georgebsr/100-days-of-code/blob/main/Whale%20Talk/whaletalk.js)
+[WhaleTalk.js](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Whale%20Talk/whaletalk.js)
 
 # Day 27
 ## JavaScript Objects
@@ -134,7 +135,7 @@ Today, I learned about getters and setters in JavaScript, and how they help cont
 ## Meal Maker
 I built a Meal Maker program for a restaurant, which allows setting a daily special meal and its price while ensuring data integrity using getters and setters.
 
-[MealMaker.js](https://github.com/georgebsr/100-days-of-code/blob/main/Meal%20Maker/mealmaker.js)
+[MealMaker.js](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Meal%20Maker/mealmaker.js)
 
 ## Key Concepts Applied:
 - Encapsulation using private properties (_meal, _price)
@@ -152,7 +153,7 @@ Today, I took a break from the curriculum and focused on practicing JavaScript c
 
 My progress so far:
 
-![progress](https://github.com/georgebsr/100-days-of-code/blob/main/My%20progress/17_02_2025.png)
+![progress](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/My%20progress/17_02_2025.png)
 
 # Day 33
 ## Team Stats
@@ -163,7 +164,7 @@ Today, I worked on a project called Team Stats. I created a JavaScript object th
 - Added methods to add new players and record new games
 - Validated the methods by adding new player Bugs Bunny and a game against the Titans
 
-[TeamStats.js](https://github.com/georgebsr/100-days-of-code/blob/main/Team%20Stats/teamstats.js)
+[TeamStats.js](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/Team%20Stats/teamstats.js)
 
 # Day 34
 ## Leetcode
