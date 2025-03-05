@@ -213,3 +213,6 @@ Pausing today because I will be in the protest over the Tempi accident.
 # Day 44, Day 45 & Day 46
 No coding these days as I was in the village without access to a PC. I took a break for the Clean Monday long weekend, which marks the start of Lent in Greece.
 
+# Day 47
+## New York Restaurants
+Completed SQL project analyzing New York restaurants on Codecademy! Queried neighborhoods, cuisines, top-rated spots, and even helped Trey find a restaurant with "meatball" in its name. Also ranked the top 10 places and revamped the rating system using CASE.
