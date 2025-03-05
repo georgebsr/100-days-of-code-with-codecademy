@@ -10,6 +10,8 @@
   - [Meal Maker](#meal-maker)  
   - [Team Stats](#team-stats)
   - [Create a Table](#sql-manipulation)
+  - [New York Restaurants](#new-york-restaurants)
+
 
 # About
 This repository is dedicated to documenting my journey through 100 days of learning and coding with codecademy.com. I will be uploading the projects I build on codecademy or in general here.
@@ -216,3 +218,5 @@ No coding these days as I was in the village without access to a PC. I took a br
 # Day 47
 ## New York Restaurants
 Completed SQL project analyzing New York restaurants on Codecademy! Queried neighborhoods, cuisines, top-rated spots, and even helped Trey find a restaurant with "meatball" in its name. Also ranked the top 10 places and revamped the rating system using CASE.
+
+[NewYorkRestaurants.sql](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/New%20York%20Restaurants/NYrestaurants.sql)
