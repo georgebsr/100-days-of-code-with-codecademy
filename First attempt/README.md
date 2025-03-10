@@ -220,3 +220,8 @@ No coding these days as I was in the village without access to a PC. I took a br
 Completed SQL project analyzing New York restaurants on Codecademy! Queried neighborhoods, cuisines, top-rated spots, and even helped Trey find a restaurant with "meatball" in its name. Also ranked the top 10 places and revamped the rating system using CASE.
 
 [NewYorkRestaurants.sql](https://github.com/georgebsr/100-days-of-code/blob/main/First%20attempt/New%20York%20Restaurants/NYrestaurants.sql)
+
+# Break of the streak 😔
+Due to some health issues, I had to pause my #100DaysOfCode challenge. Unfortunately, this means my streak is broken, but health comes first!
+I'll be taking a few more days off to fully recover and because of a busy work schedule. Once I'm feeling 100%, I'll be starting fresh from Day 1 with a new #100DaysOfCode journey.
+Looking forward to getting back into it soon!
