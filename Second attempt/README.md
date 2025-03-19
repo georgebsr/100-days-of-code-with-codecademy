@@ -50,6 +50,7 @@ FROM transaction_data
 WHERE zip LIKE '30%'
    OR zip LIKE '31%'
    OR zip LIKE '39%';
+```
 
 ## Day 2
 ### Project: RPA Customer Segmentation
@@ -97,3 +98,4 @@ SELECT
     strftime('%Y', created_at) - strftime('%Y', birthday) AS age_at_signup
 FROM 
     users;
+```
