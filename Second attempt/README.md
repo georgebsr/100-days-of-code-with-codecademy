@@ -63,7 +63,7 @@ In this project, I worked on segmenting users for Reputable Product Agency’s (
 1. Retrieved the first 20 rows of the `users` table to understand its structure.
 2. Identified users born in the 1980s for a targeted email campaign.
 3. Queried users who signed up before May 2017.
-4. Filtered users who were part of an A/B test that displayed ‘bears’ clipart.
+4. Filtered users who were part of an A/B test that displayed `bears` clipart.
 5. Retrieved users who were part of an ad campaign on website `BBB`.
 6. Found users who received ad copy 2 in their campaign.
 7. Identified users who received both a campaign and a test.
@@ -98,4 +98,56 @@ SELECT
     strftime('%Y', created_at) - strftime('%Y', birthday) AS age_at_signup
 FROM 
     users;
+```
+
+### Project: Davie’s Burgers Subway Ad
+**Platform:** Codecademy  
+**Topic:** SQL Queries for Data Exploration
+
+In this project, I analyzed Davie’s Burgers orders dataset to help their marketing team find funny special instructions left by customers. The goal was to use these instructions to create a catchy subway ad.
+
+### Tasks Completed:
+1. Retrieved the first 10 rows of the `orders` table to understand its structure.
+2. Found unique order dates to check how recent the data was.
+3. Queried the `special_instructions` column to see customer notes.
+4. Filtered out empty special instructions.
+5. Sorted instructions in alphabetical order.
+6. Found special instructions that mentioned `sauce`.
+7. Queried for instructions with `door`.
+8. Found funny instructions mentioning `box`.
+9. Retrieved order IDs for the funny special instructions, renaming columns for better readability.
+10. (Challenge) Retrieved item names, restaurant IDs, and user IDs for the customers who made the funny phrases.
+
+```sql
+-- 1. Get column names
+SELECT * FROM orders LIMIT 10;
+
+-- 2. Find unique order dates
+SELECT DISTINCT order_date FROM orders;
+
+-- 3. Retrieve only the special instructions (limit 20)
+SELECT special_instructions FROM orders LIMIT 20;
+
+-- 4. Exclude empty special instructions
+SELECT special_instructions FROM orders WHERE special_instructions IS NOT NULL LIMIT 20;
+
+-- 5. Sort instructions alphabetically
+SELECT special_instructions FROM orders WHERE special_instructions IS NOT NULL ORDER BY special_instructions LIMIT 20;
+
+-- 6. Find special instructions mentioning ‘sauce’
+SELECT special_instructions FROM orders WHERE special_instructions LIKE '%sauce%';
+
+-- 7. Find special instructions mentioning ‘door’
+SELECT special_instructions FROM orders WHERE special_instructions LIKE '%door%';
+
+-- 8. Find special instructions mentioning ‘box’
+SELECT special_instructions FROM orders WHERE special_instructions LIKE '%box%';
+
+-- 9. Retrieve order IDs and rename columns for readability
+SELECT id AS '#', special_instructions AS 'Notes' FROM orders WHERE special_instructions LIKE '%box%';
+
+-- 10. Challenge: Retrieve item name, restaurant ID, and user ID for the customer who left a ‘box’ instruction
+SELECT item_name, restaurant_id, user_id FROM orders WHERE id = (
+    SELECT id FROM orders WHERE special_instructions LIKE '%box%' LIMIT 1
+);
 ```
