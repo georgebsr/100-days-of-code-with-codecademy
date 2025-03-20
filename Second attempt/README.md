@@ -151,3 +151,18 @@ SELECT item_name, restaurant_id, user_id FROM orders WHERE id = (
     SELECT id FROM orders WHERE special_instructions LIKE '%box%' LIMIT 1
 );
 ```
+
+## Day 3
+**Platform:** Codecademy  
+**Topic:** Aggregate Functions in SQL
+
+Today, I focused on **SQL aggregate functions**, which allow summarizing multiple rows of data. These functions are essential for analyzing datasets efficiently.
+
+### Concepts Covered:
+1. **COUNT()** – Returns the number of rows that match a condition.  
+2. **SUM()** – Adds up the values in a column.  
+3. **MAX() / MIN()** – Finds the highest and lowest values in a column.  
+4. **AVG()** – Calculates the average value.  
+5. **ROUND()** – Rounds numeric values to a specified decimal place.  
+6. **GROUP BY** – Groups data based on a column for aggregate calculations.  
+7. **HAVING** – Filters grouped results (like `WHERE` but for groups).  
