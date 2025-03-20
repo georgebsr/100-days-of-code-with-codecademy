@@ -166,3 +166,64 @@ Today, I focused on **SQL aggregate functions**, which allow summarizing multipl
 5. **ROUND()** – Rounds numeric values to a specified decimal place.  
 6. **GROUP BY** – Groups data based on a column for aggregate calculations.  
 7. **HAVING** – Filters grouped results (like `WHERE` but for groups).  
+
+### Practice:
+In this challenge, I worked on analyzing user data for **Codeflix**, a streaming platform. I used **COUNT(), SUM(), GROUP BY, and ORDER BY** to answer key business questions.
+
+### Tasks Completed:
+1. Counted the number of users with emails ending in `.com`.  
+2. Identified the most popular first names among users.  
+3. Analyzed the distribution of watch durations.  
+4. Calculated total payments made by users who successfully paid.
+5. Identified users who watched more than **400 minutes** of content.  
+6. Calculated the **total watch duration** for all users.  
+7. Found the days when **Codeflix collected the most money** from payments.  
+8. Determined the **average payment amount** for successful transactions.  
+9. Found the **longest and shortest individual watch durations** in the dataset.
+
+### Solutions:
+```sql
+-- 1. Count users with '.com' emails
+SELECT COUNT(*) FROM users WHERE email LIKE '%.com';
+
+-- 2. Find the most popular first names
+SELECT first_name, COUNT(first_name) 
+FROM users 
+GROUP BY first_name 
+ORDER BY 2 DESC;
+
+-- 3. Analyze distribution of watch durations (rounded)
+SELECT ROUND(watch_duration_in_minutes, 0) AS 'duration', COUNT(*) AS 'count' 
+FROM watch_history 
+GROUP BY 1 
+ORDER BY 1 ASC;
+
+-- 4. Find users who made successful payments & their total payments
+SELECT user_id, SUM(amount) 
+FROM payments 
+WHERE status = 'paid' 
+GROUP BY 1 
+ORDER BY 2 DESC;
+
+-- 5. Find users who watched more than 400 minutes
+SELECT user_id, SUM(watch_duration_in_minutes) 
+FROM watch_history 
+GROUP BY 1 
+HAVING SUM(watch_duration_in_minutes) > 400;
+
+-- 6. Calculate total watch duration across all users
+SELECT ROUND(SUM(watch_duration_in_minutes)) FROM watch_history;
+
+-- 7. Find the days Codeflix collected the most money (successful payments)
+SELECT pay_date, SUM(amount) 
+FROM payments 
+WHERE status = 'paid' 
+GROUP BY 1 
+ORDER BY 2 DESC;
+
+-- 8. Calculate the average payment amount for successful transactions
+SELECT AVG(amount) FROM payments WHERE status = 'paid';
+
+-- 9. Find the longest and shortest watch duration in one query
+SELECT MAX(watch_duration_in_minutes) AS 'max', MIN(watch_duration_in_minutes) AS 'min' FROM watch_history;
+```
