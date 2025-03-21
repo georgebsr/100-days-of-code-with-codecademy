@@ -227,3 +227,70 @@ SELECT AVG(amount) FROM payments WHERE status = 'paid';
 -- 9. Find the longest and shortest watch duration in one query
 SELECT MAX(watch_duration_in_minutes) AS 'max', MIN(watch_duration_in_minutes) AS 'min' FROM watch_history;
 ```
+## Day 4
+### Project: Trends in Startups  
+**Platform:** Codecademy  
+**Topic:** SQL Aggregate Functions & Data Analysis  
+
+Today, I analyzed startup industry trends using SQL aggregate functions. The dataset contained key details about startup companies, including their valuation, funding, and employee count. I wrote queries to extract insights into startup valuations, market competitiveness, and company sizes across different locations.
+
+### Tasks Completed:
+1. Explored the `startups` table to understand its structure.
+2. Calculated the **total number of companies** in the dataset.
+3. Computed the **total valuation** of all startups.
+4. Found the **highest amount raised** by a startup.
+5. Identified the **highest amount raised** during the `Seed` stage.
+6. Retrieved the **year the oldest company was founded**.
+7. Calculated the **average valuation** of startups.
+8. Found the **average valuation per category**.
+9. Rounded the **average valuation per category** to **two decimal places**.
+10. Ordered the **categories by average valuation** in descending order.
+11. Counted the **number of companies in each category**.
+12. Identified the **most competitive markets** (categories with more than 3 companies).
+13. Calculated the **average startup size (employees) per location**.
+14. Identified locations with **average startup sizes above 500 employees**.
+
+### Solutions:
+```sql
+-- 1. View all columns in the startups table
+SELECT * FROM startups;
+
+-- 2. Count the total number of companies
+SELECT COUNT(*) FROM startups;
+
+-- 3. Calculate the total valuation of all startups
+SELECT SUM(valuation) FROM startups;
+
+-- 4. Find the highest amount raised by a startup
+SELECT MAX(raised) FROM startups;
+
+-- 5. Find the highest amount raised during the Seed stage
+SELECT MAX(raised) FROM startups WHERE stage = 'Seed';
+
+-- 6. Find the year the oldest company was founded
+SELECT MIN(founded) FROM startups;
+
+-- 7. Calculate the average valuation of startups
+SELECT AVG(valuation) FROM startups;
+
+-- 8. Find the average valuation per category
+SELECT category, AVG(valuation) FROM startups GROUP BY category;
+
+-- 9. Round the average valuation per category to two decimal places
+SELECT category, ROUND(AVG(valuation), 2) FROM startups GROUP BY category;
+
+-- 10. Order categories by highest average valuation
+SELECT category, ROUND(AVG(valuation), 2) FROM startups GROUP BY 1 ORDER BY 2 DESC;
+
+-- 11. Count the number of companies in each category
+SELECT category, COUNT(*) FROM startups GROUP BY category;
+
+-- 12. Identify the most competitive markets (categories with more than 3 companies)
+SELECT category, COUNT(*) FROM startups GROUP BY category HAVING COUNT(*) > 3;
+
+-- 13. Calculate the average startup size (employees) per location
+SELECT location, AVG(employees) FROM startups GROUP BY location;
+
+-- 14. Identify locations where the average startup size is above 500 employees
+SELECT location, AVG(employees) FROM startups GROUP BY location HAVING AVG(employees) > 500;
+```
