@@ -298,3 +298,118 @@ SELECT location, AVG(employees) FROM startups GROUP BY location HAVING AVG(emplo
 ### Smart Practice on Codecademy Go
 
 For these days, I was traveling and didn’t have access to my laptop or a PC. However, I kept up with the challenge by using the Codecademy Go app to practice SQL and backend development concepts daily. While I didn’t write code directly, I reviewed key topics, so I am going to count these days because I don't want to break the streak on my second attempt so early in the challenge.
+
+## Day 9  
+### **Analyze Data with SQL**  
+#### **Project 1: The Metropolitan Museum of Art**  
+Today, I worked with the `met` table, which contains data on American Decorative Arts from The Metropolitan Museum of Art. I used SQL aggregate functions to analyze this dataset and uncover insights.  
+
+#### **Tasks Completed:**  
+- Explored the dataset and identified column names.  
+- Counted the total number of pieces in the collection.  
+- Found the number of pieces related to "celery" in the collection.  
+- Retrieved the title and medium of the oldest piece(s).  
+- Identified the top 10 countries contributing to the collection.  
+- Found art categories with more than 100 pieces.  
+- Counted pieces that contain "gold" or "silver" in their medium description.
+
+### Solution:
+```sql
+ -- 1
+ SELECT * FROM met LIMIT 10;
+
+ --2
+SELECT COUNT(*) FROM met;
+
+--3
+SELECT COUNT(*) FROM met WHERE category LIKE '%celery%';
+
+--4
+--What I tried
+SELECT MIN(date) FROM met;
+SELECT date, title, medium FROM met WHERE date LIKE '%1600%';
+--What I changed after the code review
+SELECT title, medium FROM met WHERE date = (SELECT MIN(date) FROM met);
+
+--5
+SELECT COUNT(*), country FROM met GROUP BY country ORDER BY COUNT (*) DESC LIMIT 10;
+
+--6
+SELECT category, COUNT(*) FROM met GROUP BY 1 HAVING COUNT(*) > 100;
+
+--7
+--What I tried
+SELECT medium, COUNT(*) FROM met WHERE medium LIKE '%gold%' OR '%silver%' GROUP BY 1 ORDER BY 2 DESC;
+--What I changed after the code review
+SELECT medium, COUNT(*) FROM met WHERE medium LIKE '%gold%' OR medium LIKE '%silver%' GROUP BY 1 ORDER BY 2 DESC;
+```
+
+### **Project 2: Analyze Hacker News Trends**  
+For this project, I worked with the `hacker_news` dataset, which contains stories from Hacker News since 2007. I wrote queries to analyze trends, user activity, and the best times to post.  
+
+#### **Tasks Completed:**  
+- Identified the top 5 highest-scoring stories.  
+- Analyzed whether a small percentage of users dominate the site by calculating total scores per user.  
+- Found users who submitted the infamous Rickroll link.  
+- Determined which sites (GitHub, Medium, New York Times) contribute the most stories to Hacker News.  
+- Used `strftime()` to extract hours from timestamps and analyzed the best time to post based on average scores.
+
+### Solution:
+```sql
+ --1 
+ SELECT title, score FROM hacker_news ORDER BY score DESC LIMIT 5;
+
+ --2
+SELECT SUM(score) FROM hacker_news;
+
+--3
+SELECT user, SUM(score) FROM hacker_news GROUP BY user HAVING SUM(score) > 200 ORDER BY 2 DESC;
+
+--4
+SELECT (517 + 309 + 304 + 282) / 6366.0;
+
+--5
+SELECT user, COUNT(*) FROM hacker_news WHERE url LIKE '%watch?v=dQw4w9WgXcQ%' GROUP BY 1 ORDER BY 2 DESC;
+
+--6
+SELECT CASE
+   WHEN url LIKE '%github.com%' THEN 'GitHub'
+   WHEN url LIKE '%medium.com%' THEN 'Medium'
+   WHEN url LIKE '%nytimes.com%' THEN 'New York Times'
+   ELSE 'Other'
+  END AS 'Source'
+FROM hacker_news;
+
+--7
+SELECT CASE
+   WHEN url LIKE '%github.com%' THEN 'GitHub'
+   WHEN url LIKE '%medium.com%' THEN 'Medium'
+   WHEN url LIKE '%nytimes.com%' THEN 'New York Times'
+   ELSE 'Other'
+  END AS 'Source',
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1;
+
+--8
+SELECT timestamp FROM hacker_news LIMIT 10;
+
+--9
+SELECT timestamp,
+   strftime('%H', timestamp)
+FROM hacker_news
+GROUP BY 1
+LIMIT 20;
+
+--10
+SELECT strftime('%H', timestamp), AVG(score), COUNT(*) FROM hacker_news GROUP BY 1 ORDER BY 2 DESC;
+
+--11
+SELECT strftime('%H', timestamp) AS 'Hour', 
+   ROUND(AVG(score), 1) AS 'Average Score', 
+   COUNT(*) AS 'Number of Stories'
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC;
+```
