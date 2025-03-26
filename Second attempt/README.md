@@ -294,3 +294,7 @@ SELECT location, AVG(employees) FROM startups GROUP BY location;
 -- 14. Identify locations where the average startup size is above 500 employees
 SELECT location, AVG(employees) FROM startups GROUP BY location HAVING AVG(employees) > 500;
 ```
+## Days 5-8
+### Smart Practice on Codecademy Go
+
+For these days, I was traveling and didn’t have access to my laptop or a PC. However, I kept up with the challenge by using the Codecademy Go app to practice SQL and backend development concepts daily. While I didn’t write code directly, I reviewed key topics, so I am going to count these days because I don't want to break the streak on my second attempt so early in the challenge.
