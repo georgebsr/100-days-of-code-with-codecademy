@@ -413,3 +413,56 @@ WHERE timestamp IS NOT NULL
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+## Day 10  
+### **Analyze Data with SQL**  
+#### **Project: Cryptocurrency Exchange**  
+**Platform:** Codecademy  
+**Topic:** SQL Aggregate Functions  
+
+Today, I worked on analyzing financial transactions for **Fiddy Cent**, a cryptocurrency exchange. The dataset contained transaction details, including money-in (buy) and money-out (sell) amounts. I used SQL aggregate functions to calculate total amounts, identify trends, and analyze currency dominance.  
+
+#### **Tasks Completed:**  
+1. Explored the `transactions` table to understand its structure.  
+2. Calculated the total **money_in** (USD bought) and **money_out** (USD sold).  
+3. Determined how many money_in transactions exist and how many were in Bitcoin (`BIT`).  
+4. Identified the **largest transaction** and whether it was money_in or money_out.  
+5. Calculated the **average money_in for Ethereum (`ETH`) transactions**.  
+6. Created a ledger summarizing **average money_in and money_out per date**.  
+7. Formatted the previous query by rounding the averages to **two decimal places** and renaming columns for better readability.  
+
+### **Solution:**  
+```sql
+ --1
+ SELECT * FROM transactions;
+
+ --2
+ SELECT SUM(money_in) FROM transactions;
+
+ --3
+ SELECT SUM(money_out) FROM transactions;
+
+--4
+SELECT COUNT(money_in) FROM transactions;
+
+SELECT COUNT(money_in) FROM transactions WHERE currency='BIT';
+
+--5
+--Changed it after code review
+--SELECT MAX(money_in), MAX(money_out) FROM transactions;
+SELECT 
+  CASE 
+    WHEN MAX(money_in) > MAX(money_out) THEN 'money_in' 
+    ELSE 'money_out' 
+  END AS largest_transaction_type, 
+  GREATEST(MAX(money_in), MAX(money_out)) AS largest_transaction 
+FROM transactions;
+
+--6
+SELECT AVG(money_in) FROM transactions WHERE currency='ETH';
+
+--7
+SELECT date, AVG(money_in), AVG(money_out) FROM transactions GROUP BY date;
+
+--8
+SELECT date AS 'Date', ROUND(AVG(money_in), 2) AS 'Average In',ROUND(AVG(money_out), 2) AS 'Average Out' FROM transactions GROUP BY date;
+```
