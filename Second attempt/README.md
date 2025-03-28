@@ -466,3 +466,24 @@ SELECT date, AVG(money_in), AVG(money_out) FROM transactions GROUP BY date;
 --8
 SELECT date AS 'Date', ROUND(AVG(money_in), 2) AS 'Average In',ROUND(AVG(money_out), 2) AS 'Average Out' FROM transactions GROUP BY date;
 ```
+
+## Day 11  
+### **SQL: Working with Multiple Tables**  
+**Platform:** Codecademy  
+**Topic:** SQL Joins & Table Relationships  
+
+Today, I worked on expanding my SQL skills by learning how to join multiple related tables. This involved understanding different types of joins and how relational databases use **primary keys** and **foreign keys** to link tables.  
+
+#### **Concepts Covered:**  
+- **Manual table combinations** vs. SQL joins  
+- **INNER JOIN** – retrieving matching records from two tables  
+- **LEFT JOIN** – including all records from the left table and matching records from the right  
+- **Primary Key vs. Foreign Key** – ensuring relationships between tables  
+- **CROSS JOIN** – creating all possible combinations of two tables  
+- **UNION** – combining results from multiple queries  
+- **WITH clause** – using common table expressions (CTEs)  
+
+#### **Tasks Completed:**  
+- **Multiple Tables Lesson** 
+- **Songify Challenge:** SQL code challenges to practice joins  
+  - Solved 9 coding challenges involving different join operations  
