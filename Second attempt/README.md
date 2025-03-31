@@ -488,3 +488,17 @@ Today, I worked on expanding my SQL skills by learning how to join multiple rela
 
 For these days, I didn’t have access to my laptop or a PC. However, I kept up with the challenge by using the Codecademy Go app to practice SQL and backend development concepts daily. While I didn’t write code directly, I reviewed key topics, so I am going to count these days because I don't want to break the streak on my second attempt so early in the challenge.
 
+## Day 14 
+### **Subqueries in SQL**    
+**Platform:** Codecademy 
+
+Today, I worked on **subqueries** in SQL using Codecademy. I explored:  
+
+- **Introduction to Subqueries**  
+- **Using Subqueries in Queries**  
+- **Inserts, Updates, and Deletes with Subqueries**  
+- **Comparison Operators in Subqueries**  
+- **IN and NOT IN Clauses**  
+- **EXISTS and NOT EXISTS**  
+
+These concepts help in writing more efficient and dynamic SQL queries by embedding one query inside another.  
