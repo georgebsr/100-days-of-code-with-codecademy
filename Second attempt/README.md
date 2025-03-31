@@ -481,9 +481,10 @@ Today, I worked on expanding my SQL skills by learning how to join multiple rela
 - **Primary Key vs. Foreign Key** – ensuring relationships between tables  
 - **CROSS JOIN** – creating all possible combinations of two tables  
 - **UNION** – combining results from multiple queries  
-- **WITH clause** – using common table expressions (CTEs)  
+- **WITH clause** – using common table expressions (CTEs)
 
-#### **Tasks Completed:**  
-- **Multiple Tables Lesson** 
-- **Songify Challenge:** SQL code challenges to practice joins  
-  - Solved 9 coding challenges involving different join operations  
+## Days 12 & 13
+### Smart Practice on Codecademy Go
+
+For these days, I didn’t have access to my laptop or a PC. However, I kept up with the challenge by using the Codecademy Go app to practice SQL and backend development concepts daily. While I didn’t write code directly, I reviewed key topics, so I am going to count these days because I don't want to break the streak on my second attempt so early in the challenge.
+
