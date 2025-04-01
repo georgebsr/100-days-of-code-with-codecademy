@@ -502,3 +502,68 @@ Today, I worked on **subqueries** in SQL using Codecademy. I explored:
 - **EXISTS and NOT EXISTS**  
 
 These concepts help in writing more efficient and dynamic SQL queries by embedding one query inside another.  
+
+## Day 15  
+### **Analyzing Lyft Trip Data with SQL**  
+**Platform:** Codecademy 
+
+Today, I worked on a SQL project analyzing **Lyft trip data**. The project focused on **joins**, **aggregations**, and **set operations** to extract meaningful insights.  
+
+#### **Tasks Completed:**  
+- Explored **trips, riders, and cars** tables.  
+- Identified **primary keys** in each table.  
+- Used **CROSS JOIN** to combine riders and cars.  
+- Used **LEFT JOIN** to create a trip log linking trips and users.  
+- Used **INNER JOIN** to link trips and cars.  
+- Used **UNION** to combine rider data from multiple tables.  
+- Calculated **average trip cost**.  
+- Found **riders with fewer than 500 trips** for an email campaign.  
+- Counted the **number of active cars**.  
+- Found the **two cars with the highest trips completed**.  
+
+### **Solution:** 
+```sql
+--1
+SELECT * FROM trips;
+
+SELECT * FROM riders;
+
+SELECT * FROM cars;
+
+--2
+--Primary key is id
+
+--3
+SELECT riders.first, riders.last, cars.model FROM riders, cars;
+
+--4
+SELECT trips.date, 
+   trips.pickup, 
+   trips.dropoff, 
+   trips.type, 
+   trips.cost,
+   riders.first, 
+   riders.last,
+   riders.username
+FROM trips
+LEFT JOIN riders 
+  ON trips.rider_id = riders.id;
+
+--5
+SELECT * FROM trips JOIN cars ON trips.car_id = cars.id;
+
+--6
+SELECT * FROM riders UNION SELECT * FROM riders2;
+
+--7
+SELECT AVG(cost) FROM trips;
+
+--8
+SELECT * FROM riders WHERE total_trips < 500 UNION SELECT * FROM riders2 WHERE total_trips < 500;
+
+--9
+SELECT COUNT(*) FROM cars WHERE status = 'active';
+
+--10
+SELECT * FROM cars ORDER BY trips_completed DESC LIMIT 2;
+```
