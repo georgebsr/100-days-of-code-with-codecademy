@@ -567,3 +567,177 @@ SELECT COUNT(*) FROM cars WHERE status = 'active';
 --10
 SELECT * FROM cars ORDER BY trips_completed DESC LIMIT 2;
 ```
+
+## Day 16  
+### **Analyze Data with SQL**  
+**Platform:** Codecademy 
+#### **Projects Completed:**
+1. **Analyze Data with SQL: Welp**
+   - Joined `places` and `reviews` tables.
+   - Queried places by price range using the dollar sign system.
+   - Used `INNER JOIN` and `LEFT JOIN` to analyze reviews.
+   - Found places with no reviews in the dataset.
+   - Wrote a query using the `WITH` clause to select reviews from 2020.
+   - Analyzed the reviewer with the most below-average ratings.
+
+### Solution:
+```sql
+-- 1. Join places and reviews tables
+SELECT places.name, reviews.rating 
+FROM places
+INNER JOIN reviews 
+  ON places.id = reviews.place_id;
+
+-- 2. Query places by price range using dollar sign system
+SELECT name, price_range 
+FROM places 
+WHERE price_range LIKE '$$';
+
+-- 3. Left join to get all places and their reviews
+SELECT places.name, reviews.rating 
+FROM places 
+LEFT JOIN reviews 
+  ON places.id = reviews.place_id;
+
+-- 4. Find places with no reviews
+SELECT name 
+FROM places 
+LEFT JOIN reviews 
+  ON places.id = reviews.place_id 
+WHERE reviews.id IS NULL;
+
+-- 5. Get reviews from 2020 using the WITH clause
+WITH reviews_2020 AS (
+  SELECT * 
+  FROM reviews 
+  WHERE EXTRACT(YEAR FROM date) = 2020
+)
+SELECT * FROM reviews_2020;
+
+-- 6. Analyze the reviewer with the most below-average ratings
+WITH average_rating AS (
+  SELECT AVG(rating) AS avg_rating 
+  FROM reviews
+)
+SELECT reviewer_id, COUNT(*) AS below_avg_reviews 
+FROM reviews, average_rating 
+WHERE reviews.rating < average_rating.avg_rating 
+GROUP BY reviewer_id 
+ORDER BY below_avg_reviews DESC 
+LIMIT 1;
+```
+
+2. **Analyze Data with SQL: Reddit**
+   - Examined `users`, `posts`, and `subreddits` tables.
+   - Found the highest-scoring user and post.
+   - Used `LEFT JOIN` to count how many posts each user made.
+   - Filtered active posts using `INNER JOIN`.
+   - Combined new posts with `UNION ALL`.
+   - Identified popular posts with scores of at least 5000 using a `WITH` clause.
+   - Calculated the average score for posts in each subreddit.
+
+### Solution:
+```sql
+-- 1. Find the highest-scoring user and post
+SELECT user_id, MAX(score) 
+FROM posts 
+GROUP BY user_id;
+
+-- 2. Count how many posts each user made using LEFT JOIN
+SELECT users.username, COUNT(posts.id) AS post_count 
+FROM users
+LEFT JOIN posts 
+  ON users.id = posts.user_id
+GROUP BY users.username;
+
+-- 3. Filter active posts using INNER JOIN
+SELECT posts.title, posts.score 
+FROM posts 
+INNER JOIN users 
+  ON posts.user_id = users.id
+WHERE posts.active = TRUE;
+
+-- 4. Combine new posts from two sources using UNION ALL
+SELECT title FROM posts WHERE source = 'new';
+UNION ALL
+SELECT title FROM posts WHERE source = 'other';
+
+-- 5. Identify popular posts with scores of at least 5000
+WITH popular_posts AS (
+  SELECT * 
+  FROM posts 
+  WHERE score >= 5000
+)
+SELECT * FROM popular_posts;
+
+-- 6. Calculate the average score for posts in each subreddit
+SELECT subreddit, AVG(score) 
+FROM posts 
+GROUP BY subreddit;
+```
+
+3. **Analyze Data with SQL: VR Startup**
+   - Examined `employees` and `projects` tables.
+   - Found employees without assigned projects and projects with no employees.
+   - Identified the project chosen by the most employees.
+   - Analyzed whether enough developers were available for projects.
+   - Created a `personality_incompatibilities` table for team compatibility.
+   - Identified the most common personality type among employees.
+   - Found projects selected by employees with the most common personality type.
+   - Analyzed incompatible coworkers based on personality types.
+
+### Solution:
+```sql
+-- 1. Find employees without assigned projects
+SELECT name 
+FROM employees 
+WHERE project_id IS NULL;
+
+-- 2. Find projects with no employees assigned
+SELECT name 
+FROM projects 
+WHERE id NOT IN (SELECT DISTINCT project_id FROM employees);
+
+-- 3. Identify the project chosen by the most employees
+SELECT project_id, COUNT(*) AS employee_count 
+FROM employees 
+GROUP BY project_id 
+ORDER BY employee_count DESC 
+LIMIT 1;
+
+-- 4. Analyze whether enough developers were available for projects
+SELECT project_id, COUNT(*) AS developer_count 
+FROM employees 
+WHERE role = 'developer'
+GROUP BY project_id;
+
+-- 5. Create a personality_incompatibilities table
+CREATE TABLE personality_incompatibilities (
+  employee1_id INT,
+  employee2_id INT,
+  incompatibility_score INT
+);
+
+-- 6. Identify the most common personality type among employees
+SELECT personality_type, COUNT(*) AS count 
+FROM employees 
+GROUP BY personality_type 
+ORDER BY count DESC 
+LIMIT 1;
+
+-- 7. Find projects selected by employees with the most common personality type
+SELECT project_id 
+FROM employees 
+WHERE personality_type = (SELECT personality_type 
+                           FROM employees 
+                           GROUP BY personality_type 
+                           ORDER BY COUNT(*) DESC LIMIT 1);
+
+-- 8. Analyze incompatible coworkers based on personality types
+SELECT e1.name AS employee1, e2.name AS employee2, pi.incompatibility_score
+FROM employees e1
+JOIN employees e2 
+  ON e1.id < e2.id
+JOIN personality_incompatibilities pi 
+  ON e1.id = pi.employee1_id AND e2.id = pi.employee2_id;
+```
