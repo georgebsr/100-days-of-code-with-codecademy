@@ -808,7 +808,7 @@ LIMIT 5;
 ```
 
 ### **Key Learnings:**
--Used AI to generate and refine SQL queries for data analysis.
--Learned how to structure AI prompts for better query generation.
--Explored AI-driven SQL analytics in real-world applications.
--Debugged AI-generated queries to fit SQLite syntax.
+- Used AI to generate and refine SQL queries for data analysis.
+- Learned how to structure AI prompts for better query generation.
+- Explored AI-driven SQL analytics in real-world applications.
+- Debugged AI-generated queries to fit SQLite syntax.
