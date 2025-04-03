@@ -741,3 +741,74 @@ JOIN employees e2
 JOIN personality_incompatibilities pi 
   ON e1.id = pi.employee1_id AND e2.id = pi.employee2_id;
 ```
+
+## Day 17  
+### **Learn How to Use AI for SQL**  
+**Platform:** Codecademy 
+#### **Lessons Completed:**
+- What is a prompt?
+- Structuring an AI conversation
+- Providing context
+- Working with multiple tables
+- Specifying output structure
+- Other uses of AI in SQL
+- AI risks
+
+#### **Project Completed:**  
+**Analyze AI Systems with SQL**  
+- Investigated the rise of Generative AI systems using a database based on the EpochAI dataset.
+- Identified influential players in AI by analyzing the number of AI systems developed by each organization.
+- Explored AI system development trends over time.
+- Found the top AI problems organizations focus on.
+
+### **Solutions:**
+```sql
+-- 1. Show all available tables in the database
+.tables
+
+-- 5. Identify the most influential players in AI based on the number of systems developed
+SELECT o.org_name AS organization_name, COUNT(s.system) AS number_of_ai_systems_developed
+FROM orgs o
+JOIN systems s ON o.org_id = s.org_id
+GROUP BY o.org_name
+ORDER BY number_of_ai_systems_developed DESC;
+
+-- 6. Refine query to filter by AI system type and include organization type
+SELECT o.org_name AS organization_name, COUNT(s.system) AS number_of_ai_systems_developed, o.org_type
+FROM orgs o
+JOIN systems s ON o.org_id = s.org_id
+JOIN problems p ON s.problem_id = p.problem_id
+WHERE p.task = 'Image generation'
+GROUP BY o.org_name, o.org_type
+ORDER BY number_of_ai_systems_developed DESC;
+
+-- 7. Analyze the development of AI systems over time
+SELECT YEAR(s.publication_date) AS publication_year, 
+       COUNT(s.system) AS number_of_ai_systems, 
+       MAX(s.parameters) AS largest_parameter
+FROM systems s
+GROUP BY YEAR(s.publication_date)
+ORDER BY publication_year;
+
+-- 8. Fix the query for SQLite compatibility using strftime instead of YEAR
+SELECT strftime('%Y', s.publication_date) AS publication_year,
+       COUNT(s.system) AS number_of_ai_systems,
+       MAX(s.parameters) AS largest_parameter
+FROM systems s
+GROUP BY publication_year
+ORDER BY publication_year;
+
+-- 9. Find the top 5 AI problems organizations focus on
+SELECT p.task AS ai_problems, COUNT(DISTINCT s.org_id) AS number_of_organizations
+FROM problems p
+JOIN systems s ON p.problem_id = s.problem_id
+GROUP BY ai_problems
+ORDER BY number_of_organizations DESC
+LIMIT 5;
+```
+
+### **Key Learnings:**
+-Used AI to generate and refine SQL queries for data analysis.
+-Learned how to structure AI prompts for better query generation.
+-Explored AI-driven SQL analytics in real-world applications.
+-Debugged AI-generated queries to fit SQLite syntax.
