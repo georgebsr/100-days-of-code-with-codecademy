@@ -812,3 +812,21 @@ LIMIT 5;
 - Learned how to structure AI prompts for better query generation.
 - Explored AI-driven SQL analytics in real-world applications.
 - Debugged AI-generated queries to fit SQLite syntax.
+
+## Day 18  
+### **Lessons Completed:**
+- **Going Off-Platform: Local Setup**
+  - Set up a local SQL database environment on my computer.
+  - Learned about SQLite and how to use the command line to navigate and manage databases.
+  - Articles read:
+    - *What is SQLite?*
+    - *Command Line Interface Setup*
+
+- **Review Commands**
+  - Reviewed all the SQL commands learned so far for querying, filtering, joining, and aggregating data.
+  - Reinforced understanding of:
+    - SELECT, WHERE, JOIN, GROUP BY, ORDER BY
+    - Aggregation functions like COUNT, MAX, MIN, AVG, SUM
+    - Creating and modifying tables
+    - 
+**Note**: Limited time today, but made progress by reinforcing fundamentals.
