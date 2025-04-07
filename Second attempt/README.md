@@ -830,3 +830,19 @@ LIMIT 5;
     - Creating and modifying tables
     - 
 **Note**: Limited time today, but made progress by reinforcing fundamentals.
+
+## Day 19  
+### **Lesson: Usage Funnels**  
+**Platform:** Codecademy  
+**Topic:** SQL Funnel Analysis (Marketing & Product Analytics)  
+
+Today, I learned how to analyze usage funnels using SQL. The lesson focused on tracking user behavior through multiple steps of a process — specifically looking at Warby Parker’s funnel:  
+**Quiz → Home Try-On → Purchase**.  
+
+### **Concepts Covered:**  
+- What is a funnel and how it helps analyze drop-offs in user behavior.  
+- How to calculate **conversion rates** between stages.  
+- Creating funnel visualizations using data from **a single table** and **multiple related tables**.  
+- Performing funnel analysis on **A/B test groups**.  
+- Using SQL joins and aggregations to build the funnel step-by-step.
+
