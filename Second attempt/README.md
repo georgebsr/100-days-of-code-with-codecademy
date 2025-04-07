@@ -859,7 +859,7 @@ In this project, I analyzed Warby Parker’s marketing funnels to calculate conv
 ### **Quiz Funnel**  
 **Tables used:** `survey`  
 
-#### 📝 Tasks & Solutions:
+#### Tasks & Solutions:
 **1.** View first 10 rows of the survey table:  
 ```sql
 SELECT * FROM survey LIMIT 10;
@@ -890,3 +890,24 @@ LEFT JOIN home_try_on h ON q.user_id = h.user_id
 LEFT JOIN purchase p ON p.user_id = q.user_id 
 LIMIT 10;
 ```
+
+## Day 21  
+### **User Churn Analysis for Codeflix Users**  
+**Platform:** Codecademy  
+
+Today, I worked on analyzing **user churn** for two groups of **Codeflix users**. The lesson involved calculating churn rates for users over different time periods to understand retention patterns.
+
+#### **Tasks Completed:**  
+- **What is Churn?**  
+  Learned about churn, which is the percentage of users who cancel their subscription during a given period. I also explored retention and its significance in customer success strategies.
+
+- **Single Month I & II**  
+  Calculated churn for a single month by analyzing active and canceled users.
+
+- **Multiple Month Analysis:**  
+  - Created a **temporary months table** and used **cross join** to combine months and users.
+  - Determined **active status** and **cancellation status** across multiple months to understand churn trends over time.
+
+- **Churn Rate Calculation:**  
+  Calculated the **churn rate** by summing the number of active and canceled users and applying the churn formula.
+
