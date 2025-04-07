@@ -846,3 +846,47 @@ Today, I learned how to analyze usage funnels using SQL. The lesson focused on t
 - Performing funnel analysis on **A/B test groups**.  
 - Using SQL joins and aggregations to build the funnel step-by-step.
 
+## Day 20  
+### **Project: Usage Funnels with Warby Parker**  
+**Platform:** Codecademy  
+**Topic:** Funnel Analysis using SQL  
+**Collaboration:** Warby Parker's Data Science Team (with fictional data)  
+
+In this project, I analyzed Warby Parker’s marketing funnels to calculate conversion rates across two main paths:  
+- **Quiz Funnel**
+- **Home Try-On Funnel**
+
+### **Quiz Funnel**  
+**Tables used:** `survey`  
+
+#### 📝 Tasks & Solutions:
+**1.** View first 10 rows of the survey table:  
+```sql
+SELECT * FROM survey LIMIT 10;
+```
+**2.** Count number of responses for each quiz question:
+```sql
+SELECT question, COUNT(DISTINCT user_id) 
+FROM survey 
+GROUP BY 1;
+```
+**4.** View sample data from all three funnel stages:
+Tables used: quiz, home_try_on, purchase
+```sql
+SELECT * FROM quiz LIMIT 5;
+
+SELECT * FROM home_try_on LIMIT 5;
+
+SELECT * FROM purchase LIMIT 5;
+```
+**5.** Combine all three stages into a single user-centric funnel table:
+```sql
+SELECT DISTINCT q.user_id,
+   h.user_id IS NOT NULL AS 'is_home_try_on',
+   h.number_of_pairs,
+   p.user_id IS NOT NULL AS 'is_purchase'
+FROM quiz q 
+LEFT JOIN home_try_on h ON q.user_id = h.user_id
+LEFT JOIN purchase p ON p.user_id = q.user_id 
+LIMIT 10;
+```
