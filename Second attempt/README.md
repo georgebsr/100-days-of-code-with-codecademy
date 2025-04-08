@@ -911,3 +911,183 @@ Today, I worked on analyzing **user churn** for two groups of **Codeflix users**
 - **Churn Rate Calculation:**  
   Calculated the **churn rate** by summing the number of active and canceled users and applying the churn formula.
 
+## Day 22  
+### **Project: Calculating Churn Rates for Codeflix**  
+**Platform:** Codecademy  
+
+Today I completed the **“Calculating Churn Rates”** project, where I analyzed the churn performance of two user segments from Codeflix’s early subscription data.
+
+The dataset provided included one table: `subscriptions` with columns:  
+- `id` (subscription ID)  
+- `subscription_start`  
+- `subscription_end`  
+- `segment` (acquisition channel)
+
+The goal was to calculate monthly churn rates for segments 87 and 30 over the first three months of 2017, and to identify which segment had better retention.
+
+### **Tasks Completed:**
+1. **Explored the first 100 rows** of the dataset to understand its structure and values.  
+2. **Determined the date range** to identify which months to analyze.  
+3. **Created a `months` temp table** for Jan–Mar 2017.  
+4. **Cross joined `subscriptions` and `months`** to pair each subscription with each month.  
+5. **Created a `status` table** to mark active users per segment in each month.  
+6. **Added cancellation flags** for each segment based on `subscription_end`.  
+7. **Aggregated churn data** by summing active and canceled users.  
+8. **Calculated churn rates** for each segment and compared results.  
+9. **Bonus:** Modified the code to support **multiple segments dynamically**, making the solution more scalable.
+
+
+### **Key SQL Concepts Practiced:**
+- CTEs (`WITH` clauses)  
+- `CROSS JOIN`  
+- `CASE WHEN` logic  
+- Aggregation with `SUM()`  
+- `NULLIF()` to avoid division by zero  
+- Query optimization with indexing
+
+### **Feedback from Code Review (AI-powered by Codecademy):**
+- ✅ Logic is correct and efficient  
+- ✅ Clear breakdown using CTEs  
+- ✅ Handled multiple segments effectively  
+- 🔄 Suggested improvements:
+  - Add comments to clarify each step
+  - Use more descriptive aliases (e.g., `month_start` instead of `first_day`)
+  - Ensure consistent formatting for readability  
+  - Use indexes on frequently filtered columns for performance
+
+### My solution:
+```sql
+--1 
+SELECT * FROM subscriptions LIMIT 100;
+
+CREATE INDEX idx_segment ON subscriptions(segment);
+
+--2
+SELECT MIN(subscription_start) AS earliest_start, MAX(subscription_start) AS latest_start FROM subscriptions;
+
+--3
+WITH months AS (
+  SELECT '2017-01-01'::date AS first_day, '2017-01-31'::date AS last_day
+  UNION
+  SELECT '2017-02-01', '2017-02-28'
+  UNION
+  SELECT '2017-03-01', '2017-03-31'
+)
+
+--4
+cross_join AS (
+  SELECT 
+    subscriptions.*, 
+    months.first_day, 
+    months.last_day
+  FROM subscriptions
+  CROSS JOIN months
+)
+
+--5
+-- Task 5: Create status table to determine active and canceled subscriptions
+, status AS (
+  SELECT
+    id,
+    first_day AS month,
+
+    CASE 
+      WHEN segment = 87 AND subscription_start < first_day AND 
+           (subscription_end > first_day OR subscription_end IS NULL)
+      THEN 1 ELSE 0 
+    END AS is_active_87,
+
+    CASE 
+      WHEN segment = 30 AND subscription_start < first_day AND 
+           (subscription_end > first_day OR subscription_end IS NULL)
+      THEN 1 ELSE 0 
+    END AS is_active_30,
+    
+    segment,
+    subscription_end,
+    first_day,
+    last_day
+  FROM cross_join
+)
+
+--6
+, status_with_cancels AS (
+  SELECT *,
+    CASE 
+      WHEN segment = 87 AND subscription_end BETWEEN first_day AND last_day THEN 1 
+      ELSE 0 
+    END AS is_canceled_87,
+    
+    CASE 
+      WHEN segment = 30 AND subscription_end BETWEEN first_day AND last_day 
+      THEN 1 ELSE 0 
+    END AS is_canceled_30
+  FROM status
+)
+
+--7
+, status_aggregate AS (
+  SELECT
+    month,
+    SUM(is_active_87) AS sum_active_87,
+    SUM(is_active_30) AS sum_active_30,
+    SUM(is_canceled_87) AS sum_canceled_87,
+    SUM(is_canceled_30) AS sum_canceled_30
+  FROM status_with_cancels
+  GROUP BY month
+)
+
+--8
+SELECT
+  month,
+  sum_canceled_87::float / NULLIF(sum_active_87, 0) AS churn_rate_87,
+  sum_canceled_30::float / NULLIF(sum_active_30, 0) AS churn_rate_30
+FROM status_aggregate;
+
+--9
+WITH months AS (
+  SELECT '2017-01-01'::date AS month_start, '2017-01-31'::date AS month_end
+  UNION
+  SELECT '2017-02-01', '2017-02-28'
+  UNION
+  SELECT '2017-03-01', '2017-03-31'
+),
+cross_join AS (
+  SELECT 
+    s.*, 
+    m.first_day, 
+    m.last_day
+  FROM subscriptions s
+  CROSS JOIN months m
+),
+status AS (
+  SELECT
+    segment,
+    first_day AS month,
+    CASE 
+      WHEN subscription_start < first_day AND 
+           (subscription_end > first_day OR subscription_end IS NULL)
+      THEN 1 ELSE 0 
+    END AS is_active,
+    CASE 
+      WHEN subscription_end BETWEEN first_day AND last_day
+      THEN 1 ELSE 0 
+    END AS is_canceled
+  FROM cross_join
+),
+status_aggregate AS (
+  SELECT
+    month,
+    segment,
+    SUM(is_active) AS sum_active,
+    SUM(is_canceled) AS sum_canceled
+  FROM status
+  GROUP BY month, segment
+)
+SELECT
+  month,
+  segment,
+  sum_canceled::float / NULLIF(sum_active, 0) AS churn_rate
+FROM status_aggregate
+ORDER BY month, segment;
+```
