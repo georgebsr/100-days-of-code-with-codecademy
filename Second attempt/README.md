@@ -1091,3 +1091,26 @@ SELECT
 FROM status_aggregate
 ORDER BY month, segment;
 ```
+
+## Day 23  
+### **Lesson: Marketing Attribution**  
+**Platform:** Codecademy  
+**Topic:** First- and Last-Touch Attribution  
+**Objective:** Help CoolTShirts, an innovative apparel shop, improve their marketing campaigns using attribution modeling.
+
+### Key Concepts Learned
+- **First-touch attribution**: Gives all credit for a conversion to the user’s first interaction.
+- **Last-touch attribution**: Gives credit to the user’s last interaction before conversion.
+- **Comparison of both models** to assess their differences and potential business impact.
+- Writing attribution queries using **SQL joins**, **CASE WHEN**, and **aggregation functions**.
+
+### Lesson Structure
+1. **Introduction**
+2. **First Touch Example**
+3. **Last Touch Example**
+4. **First vs. Last Comparison**
+5. **Attribution Query I** – Writing queries to extract first-touch data
+6. **Attribution Query II** – Extracting last-touch data
+7. **Attribution Query III** – Comparing first-touch and last-touch attribution
+8. **Review** – Understanding how these attribution models affect marketing decisions
+
