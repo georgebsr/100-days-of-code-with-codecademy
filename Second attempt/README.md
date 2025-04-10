@@ -1114,3 +1114,142 @@ ORDER BY month, segment;
 7. **Attribution Query III** – Comparing first-touch and last-touch attribution
 8. **Review** – Understanding how these attribution models affect marketing decisions
 
+## Day 24  
+### **Project: Attribution Queries – CoolTShirts**  
+**Platform:** Codecademy  
+**Topic:** Touch Attribution with SQL  
+**Objective:** Analyze marketing campaigns and user journeys to determine which campaigns drive the most value for CoolTShirts.
+
+### Key Concepts Practiced  
+- First-touch attribution  
+- Last-touch attribution  
+- Campaign and source mapping  
+- Purchaser tracking  
+- SQL joins, `WITH` clauses (CTEs), and `GROUP BY`  
+- Optimization tips and code readability practices
+
+### Tasks Completed  
+1. **Campaigns and Sources**  
+   - Counted distinct campaigns and sources  
+   - Mapped each campaign to its respective source
+
+2. **Page Names on the Website**  
+   - Identified all distinct pages visited on the CoolTShirts website
+
+3. **First-Touch Attribution**  
+   - Used CTEs to find each user’s first interaction  
+   - Counted first touches grouped by campaign and source
+
+4. **Last-Touch Attribution**  
+   - Used CTEs to find each user’s last interaction  
+   - Counted last touches grouped by campaign and source
+
+5. **Track Purchases**  
+   - Counted distinct users who visited the purchase page
+
+6. **Campaigns Driving Last-Touch Purchases**  
+   - Filtered last-touch data to only include users who reached the purchase page  
+   - Counted last touches leading to a purchase by campaign and source
+
+7. **Marketing Recommendations**  
+   - Analyzed attribution results to determine top-performing campaigns
+
+### My solution:
+
+```sql
+--1
+--Count distinct campaigns
+SELECT COUNT(DISTINCT utm_campaign) AS campaign_count
+FROM page_visits;
+
+--Count distinct sources
+SELECT COUNT(DISTINCT utm_source) AS source_count
+FROM page_visits;
+
+--Show the mapping between campaigns and sources
+SELECT DISTINCT utm_source, utm_campaign
+FROM page_visits;
+
+--2
+SELECT DISTINCT page_name
+FROM page_visits;
+
+--3
+WITH first_touch AS (
+    SELECT user_id,
+           MIN(timestamp) AS first_touch_at
+    FROM page_visits
+    GROUP BY user_id
+),
+ft_attr AS (
+    SELECT ft.user_id,
+           ft.first_touch_at,
+           pv.utm_source,
+           pv.utm_campaign
+    FROM first_touch ft
+    JOIN page_visits pv
+      ON ft.user_id = pv.user_id
+     AND ft.first_touch_at = pv.timestamp
+)
+SELECT ft_attr.utm_source,
+       ft_attr.utm_campaign,
+       COUNT(*) AS first_touch_count
+FROM ft_attr
+GROUP BY 1, 2
+ORDER BY 3 DESC;
+
+--4
+WITH last_touch AS (
+    SELECT user_id,
+           MAX(timestamp) AS last_touch_at
+    FROM page_visits
+    GROUP BY user_id
+),
+lt_attr AS (
+    SELECT lt.user_id,
+           lt.last_touch_at,
+           pv.utm_source,
+           pv.utm_campaign,
+           pv.page_name
+    FROM last_touch lt
+    JOIN page_visits pv
+      ON lt.user_id = pv.user_id
+     AND lt.last_touch_at = pv.timestamp
+)
+SELECT lt_attr.utm_source,
+       lt_attr.utm_campaign,
+       COUNT(*) AS last_touch_count
+FROM lt_attr
+GROUP BY 1, 2
+ORDER BY 3 DESC;
+
+--5
+SELECT COUNT(DISTINCT user_id) AS purchasers
+FROM page_visits
+WHERE page_name = '4 - purchase';
+
+--6
+WITH last_touch AS (
+    SELECT user_id,
+           MAX(timestamp) AS last_touch_at
+    FROM page_visits
+    WHERE page_name = '4 - purchase'
+    GROUP BY user_id
+),
+lt_attr AS (
+    SELECT lt.user_id,
+           lt.last_touch_at,
+           pv.utm_source,
+           pv.utm_campaign
+    FROM last_touch lt
+    JOIN page_visits pv
+      ON lt.user_id = pv.user_id
+     AND lt.last_touch_at = pv.timestamp
+)
+SELECT lt_attr.utm_source,
+       lt_attr.utm_campaign,
+       COUNT(*) AS last_touch_purchase_count
+FROM lt_attr
+GROUP BY 1, 2
+ORDER BY 3 DESC;
+```
