@@ -1253,3 +1253,67 @@ FROM lt_attr
 GROUP BY 1, 2
 ORDER BY 3 DESC;
 ```
+
+## Day 25  
+### **Lesson: Window Functions**  
+**Platform:** Codecademy  
+**Topic:** SQL Window Functions  
+
+### Key Concepts Practiced  
+
+Today I explored **window functions** in SQL—powerful tools for performing calculations **across related rows** in a result set, while still preserving individual row detail.
+
+### Lesson Breakdown  
+
+1. **Introduction to Window Functions**  
+   - Learned the difference between **aggregate functions** and **window functions**.  
+   - Window functions do **not collapse rows**, but rather compute values across a "window" of rows.
+
+2. **Window Function Syntax**  
+   ```sql
+   function_name(column_name) OVER (
+     PARTITION BY column_name
+     ORDER BY column_name
+   )
+   ```
+
+3. **`PARTITION BY`**  
+   - Similar to `GROUP BY` but used within the window scope.  
+   - Allows comparison within subsets of data.
+
+4. **`FIRST_VALUE` & `LAST_VALUE`**  
+   - Retrieved first and last values in a partition (e.g., first purchase date by user).
+
+5. **`LAG` and `LEAD`**  
+   - Used to access data from **preceding** (`LAG`) or **following** (`LEAD`) rows.  
+   - Great for trend and sequential analysis.
+
+6. **`ROW_NUMBER()`**  
+   - Assigned a unique row number within each partition.
+
+7. **`RANK()`**  
+   - Ranked rows with ties having the same rank (next rank skips accordingly).
+
+8. **`NTILE(n)`**  
+   - Divided result set into `n` approximately equal groups (useful for quartiles or percentiles).
+
+### Example Code Snippets  
+
+```sql
+-- Using ROW_NUMBER to find the top sale per region
+SELECT 
+  region, 
+  employee, 
+  sale_amount,
+  ROW_NUMBER() OVER (PARTITION BY region ORDER BY sale_amount DESC) AS row_num
+FROM sales;
+```
+
+```sql
+-- LAG example to compare current vs previous month's revenue
+SELECT 
+  month,
+  revenue,
+  LAG(revenue) OVER (ORDER BY month) AS previous_revenue
+FROM monthly_revenue;
+```
