@@ -1317,3 +1317,10 @@ SELECT
   LAG(revenue) OVER (ORDER BY month) AS previous_revenue
 FROM monthly_revenue;
 ```
+
+## Day 26–27  
+### **Break Days**  
+I took a break from coding for a hiking adventure
+No Codecademy lessons or exercises completed these two days.
+
+Sometimes, the best way to clear your mind and come back stronger is to **step away from the screen and explore nature**.
