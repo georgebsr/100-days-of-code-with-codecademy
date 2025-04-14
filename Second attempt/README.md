@@ -1324,3 +1324,62 @@ I took a break from coding for a hiking adventure
 No Codecademy lessons or exercises completed these two days.
 
 Sometimes, the best way to clear your mind and come back stronger is to **step away from the screen and explore nature**.
+
+## Day 28  
+### **Topic:** Math and Date Functions  
+**Platform:** Codecademy  
+**Type:** Lesson with exercises  
+
+### **What I Learned Today**
+
+#### **Math Functions**
+- **Math Operators**  
+  Practiced using `+`, `-`, `*`, `/`, `%` to perform arithmetic on table columns.
+
+- **ABS()**  
+  Learned to return the absolute value of a number using:
+  ```sql
+  SELECT ABS(-10); -- returns 10
+  ```
+
+- **CAST()**  
+  Practiced converting data types using `CAST()`:
+  ```sql
+  SELECT CAST('2025-01-01' AS DATE);
+  SELECT CAST(9.75 AS INTEGER); -- returns 9
+  ```
+
+---
+
+#### **Date and Time Functions**
+
+- **CURRENT_DATE / CURRENT_TIMESTAMP**  
+  Grabbed today’s date and timestamp:
+  ```sql
+  SELECT CURRENT_DATE;
+  SELECT CURRENT_TIMESTAMP;
+  ```
+
+- **DATE_PART()**  
+  Extracted components from a date:
+  ```sql
+  SELECT DATE_PART('year', CURRENT_DATE);  -- returns the current year
+  ```
+
+- **AGE()**  
+  Calculated age from a given date:
+  ```sql
+  SELECT AGE('2020-01-01');  -- returns interval since that date
+  ```
+
+- **DATE_TRUNC()**  
+  Truncated datetime to a specific part:
+  ```sql
+  SELECT DATE_TRUNC('month', CURRENT_TIMESTAMP);  -- returns start of the month
+  ```
+
+### **Takeaways**
+- These functions are essential for cleaning and transforming time-series data.
+- Combining math with date logic gives powerful tools for **financial**, **logistics**, and **retention** analyses.
+- `CAST()` is useful when dealing with mismatched types or when formatting for reports.
+
