@@ -1383,3 +1383,107 @@ Sometimes, the best way to clear your mind and come back stronger is to **step a
 - Combining math with date logic gives powerful tools for **financial**, **logistics**, and **retention** analyses.
 - `CAST()` is useful when dealing with mismatched types or when formatting for reports.
 
+## Last Days
+**Platform:** Codecademy
+
+I paused the challenge for a few days due to **Easter holidays**. After that, I jumped right back in and **completed the "Analyze Data with SQL" Skill Path** on Codecademy!
+I did the Interview Prep Problems and the follow rpoject.
+
+### **Project:** Analyze Twitch Gaming Data  
+**Type:** SQL Project (11/11 Tasks Completed)  
+**Focus:** Aggregates, Case Logic, Date Functions, Table Joins  
+
+### **Dataset Overview**
+- **Tables:**
+  - `stream`: contains stream viewing data (game, channel, country, player, time, device_id)
+  - `chat`: contains chat room usage data (device_id, etc.)
+
+### **Tasks & Solutions**
+
+#### **1. Preview Tables**
+```sql
+SELECT * FROM stream LIMIT 20;
+```
+
+#### **2. Unique Games**
+```sql
+SELECT game FROM stream GROUP BY game;
+```
+
+#### **3. Unique Channels**
+```sql
+SELECT channel FROM stream GROUP BY channel;
+```
+
+#### **4. Most Popular Games**
+```sql
+SELECT game, COUNT(game)
+FROM stream
+GROUP BY game
+ORDER BY COUNT(game) DESC;
+```
+
+#### **5. LoL Viewers by Country**
+```sql
+SELECT country, COUNT(country)
+FROM stream
+WHERE game = 'League of Legends'
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+
+#### **6. Players by Device**
+```sql
+SELECT player, COUNT(player)
+FROM stream
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+
+#### **7. Categorize Games by Genre**
+```sql
+SELECT game,
+ CASE
+  WHEN game = 'Dota 2' THEN 'MOBA'
+  WHEN game = 'League of Legends' THEN 'MOBA'
+  WHEN game = 'Heroes of the Storm' THEN 'MOBA'
+  WHEN game = 'Counter-Strike: Global Offensive' THEN 'FPS'
+  WHEN game = 'DayZ' THEN 'Survival'
+  WHEN game = 'ARK: Survival Evolved' THEN 'Survival'
+  ELSE 'Other'
+ END AS genre,
+ COUNT(game)
+FROM stream
+GROUP BY 1
+ORDER BY 3 DESC;
+```
+
+#### **8. Time Preview**
+```sql
+SELECT time FROM stream LIMIT 10;
+```
+
+#### **9. Extract Seconds Using `strftime()`**
+```sql
+SELECT time,
+   strftime('%S', time)
+FROM stream
+GROUP BY 1
+LIMIT 20;
+```
+
+#### **10. View Count by Hour (US only)**
+```sql
+SELECT strftime('%H', time), COUNT(1)
+FROM stream
+WHERE country = 'US'
+GROUP BY 1;
+```
+
+#### **11. Join `stream` and `chat` on device_id**
+```sql
+SELECT * FROM stream
+JOIN chat
+  ON stream.device_id = chat.device_id
+LIMIT 20;
+```
