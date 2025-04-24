@@ -1,5 +1,7 @@
 # 100 Days of Code - Second Attempt
 
+- [certification](#certification)
+
 ## Day 1
 ### Project: Analyze Data with SQL
 **Platform:** Codecademy  
@@ -1487,3 +1489,4 @@ JOIN chat
   ON stream.device_id = chat.device_id
 LIMIT 20;
 ```
+![certification](https://github.com/georgebsr/100-days-of-code-with-codecademy/blob/main/Second%20attempt/Photos/certification.png)
