@@ -7,3 +7,4 @@ Welcome to my 100 Days of Code repository! Here I document my journey through th
 - **Each folder** contains the projects I completed during that particular attempt.
 - The README in each folder explains in detail what I worked on each day.
 
+I've currently paused the challenge as I've transitioned into a QA Tester role. I plan to resume it in the future when the time is right.
